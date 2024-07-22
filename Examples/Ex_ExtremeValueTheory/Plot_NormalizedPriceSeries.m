@@ -1,0 +1,3 @@
+function Plot_NormalizedPriceSeries(Dates,Prices,Returns,Names)% Copyright 2014 The MathWorks, Inc.
+
+%% Plot Price Seriesh_Fig = figure;subplot(3,3,1:3)NormalizedPrices = ret2price(price2ret(Prices),1);plot(Dates, NormalizedPrices)datetick('x')xlabel('Date')ylabel('Index Value')title ('\bf Relative Daily Index Closings')legend(Names, 'Location', 'NorthWest')%% Visualize Log Returnsfor i = 1:size(Prices,2)    h_Axis = subplot(3,3,i+3);    Plot_FinancialTimeSeries(h_Fig,h_Axis,Dates(2:end),Returns(:,i),'mm/yy',6,6,'Percent',['\bf Daily Logarithmic Returns of ' Names{i}])end

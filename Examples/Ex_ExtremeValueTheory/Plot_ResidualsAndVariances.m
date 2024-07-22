@@ -1,0 +1,3 @@
+function Plot_ResidualsAndVariances(Dates,ei_Residuals,Variances,Names)% Copyright 2014 The MathWorks, Inc.
+
+%% Plot Price Seriesh_Fig = figure;IdxSet1 = [1 2 3; 7 8 9];IdxSet2 = [4 5 6; 10 11 12];for i = 1:size(ei_Residuals,2)    h_Axis = subplot(4,3,IdxSet1(i));    Plot_FinancialTimeSeries(h_Fig,h_Axis,Dates(2:end),ei_Residuals(:,i),'mm/yy',6,6,'Percent',['\bf Residuals ' Names{i}])    h_Axis = subplot(4,3,IdxSet2(i));    Plot_FinancialTimeSeries(h_Fig,h_Axis,Dates(2:end),sqrt(Variances(:,i)),'mm/yy',6,6,'Percent',['\bf Conditional Standard Deviations ' Names{i}])end

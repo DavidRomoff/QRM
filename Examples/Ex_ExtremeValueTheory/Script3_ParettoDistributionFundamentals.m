@@ -1,0 +1,3 @@
+%% Fit a Pareto Tails Distribution - Illustrative% Copyright 2014 The MathWorks, Inc.
+
+%% Create returnsReturns = random('gev',0,1,-1/2,[1000 1]);%% Step #1: Fit a distributionNormalDist = fitdist(Returns,'normal');tailFraction    = 0.1;ParetoTailsDist = paretotails(Returns,tailFraction,1-tailFraction,'kernel');%% Step #2: Visualize the DistributionPlot_ParetoAndNormalFit(ParetoTailsDist,NormalDist,Returns,tailFraction)
